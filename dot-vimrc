@@ -1,0 +1,75 @@
+if has('mac')
+  set guifont=Monaco:h10
+  color liquidcarbon
+elseif has('unix')
+  set guifont=Bitstream\ Vera\ Sans\ Mono\ 8
+  color darkspectrum
+endif
+
+syntax on
+
+set nowrap
+set tabstop=2
+set shiftwidth=2
+set smartindent
+set expandtab
+
+set number
+set ruler
+set paste
+
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set scrolloff=2
+set wildmenu
+set wildmode=longest,list,full
+set switchbuf=newtab
+set backupdir=~/.backup,.
+set directory=~/.backup,.
+set fileencodings=ucs-bom,utf-8,default,latin1
+
+set viminfo='20,\"50
+set nowrap
+set wmh=0
+set hidden
+
+set guioptions-=T
+set guioptions-=m
+set guioptions-=L
+set guioptions-=r
+
+set completeopt=longest,menuone
+
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplModSelTarget = 1 
+let g:NERDShutUp = 1
+
+let mapleader = ","
+
+map <Leader>d :BD<CR>
+map <Leader>f :NERDTreeToggle<CR>
+map <Leader>F :NERDTreeFind<CR>
+map <Leader>e :e <C-R>=expand("%:p:h")."/"<CR>
+map <C-n> :bn<CR>
+map <C-p> :bp<CR>
+map <D-1> :bp<CR>
+map <D-2> :bn<CR>
+map <C-k> <C-w>k<CR><C-w>_
+map <C-j> <C-w>j<CR><C-w>_
+map <C-h> <C-w>h<CR><C-w>_
+map <C-l> <C-w>l<CR><C-w>_
+map <Tab> :e#<CR>
+
+map <Leader>v :e ~/.vimrc<CR><C-W>_
+map <silent> <Leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+
+
+au! BufReadPost,BufWritePost * silent loadview
+au! BufWritePost * silent mkview
+
+filetype off
+filetype on

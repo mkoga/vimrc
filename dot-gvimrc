@@ -1,0 +1,11 @@
+if has('mac')
+  colorscheme darkspectrum
+  " set lines=57 columns=112
+
+  set go-=T
+  set bg=dark
+  if &background == "dark"
+      hi normal guibg=black
+      set transp=8
+  endif
+endif
